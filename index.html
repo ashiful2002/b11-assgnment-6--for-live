@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo.png">
+    <meta name="description"
+        content="this is a dictionary called english which can helps you to find meaninng some words">
+    <title>English Janala</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- daisyUi cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar bg-base-300 shadow-sm flex flex-col sm:flex-row items-center justify-between">
+            <div class="">
+
+                <a class="btn btn-ghost text-xl" href="#">
+                    English
+                    <img src="./assets/logo.png" alt="english janala">
+                    জানালা
+                </a>
+            </div>
+
+            <div class="flex items-center justify-center gap-2 md:gap-5 ">
+                <!-- faq -->
+                <div class="">
+                    <a href=#faq-section
+                        class="btn rounded border border-violet-700 flex items-center text-violet-700 hover:bg-violet-700 hover:text-white transition-all">
+                        <i class="fa-solid fa-question  rounded-full p-1 "></i> <span>FAQ</span>
+                    </a>
+                </div>
+                <!-- learn -->
+                <div class="">
+                    <a href="#learn-section"
+                        class="btn rounded border border-violet-700 flex items-center text-violet-700 hover:bg-violet-700 hover:text-white transition-all">
+                        <i class="fa-solid fa-book-open  rounded-full p-1 "></i>
+                        <span>Learn</span>
+                    </a>
+                </div>
+                <!-- log out -->
+                <div class="">
+                    <a
+                        class="btn rounded border border-violet-700 flex items-center text-violet-700 hover:bg-violet-700 hover:text-white transition-all">
+                        <i class="fa-solid fa-arrow-right-from-bracket  rounded-full p-1 "></i>
+                        <span onclick="handleLogOut()">log out</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <!-- hero section -->
+        <section id="banner" class="container my-32 p-2 mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-2/5">
+                <h1 class="text-[3rem] font-bold"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+                <p class="text-lg">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে
+                    চান, আমাদের
+                    Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <div class="flex flex-col items-center md:items-start gap-2">
+                    <input class="input " type="text" name="name" placeholder="Enter Your Name" id="inputName">
+                    <input class="input" type="password" name="password" placeholder="Enter Password  '123456' "
+                        id="inputPassword">
+                    <button class="input btn btn-primary" onclick="getStarted()">Get Started</button>
+                </div>
+            </div>
+            <div>
+                <img src="./assets/hero-student.png" alt="">
+            </div>
+        </section>
+
+        <!-- learn section -->
+
+        <section id="learn-section" class="container mx-auto mb-40 ">
+            <h1 class="text-[2rem] text-center my-5 font-bold"><span class="text-[#00BCFF]">Let's</span> Learn
+                Vocabularies</h1>
+            <!-- fetch all btn here -->
+            <div id="learn-all-btn" class="flex items-center gap-4 justify-center py-12 flex-wrap">
+                <!-- btn fetched successfully here -->
+
+            </div>
+            <div id="learn-container">
+                <!-- not selected nbtn -->
+                <div id="not-selected-section"
+                    class=" bg-gray-200 rounded-md flex flex-col items-center justify-center p-20 ">
+                    <p class="text-sm">আপনি এখনো কোন Lesson Select করেন নি </p>
+                    <p class="text-[3rem] font-semibold">একটি Lesson Select করুন।</p>
+                </div>
+                <!-- no fetched data -->
+
+                <!-- lesson Details -->
+                <div id="lesson-container" class="grid grid-cols-1 md:grid-cols-3 gap-5 bg-gray-200 p-10 rounded-xl ">
+                    <!-- single word  -->
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- faq section section -->
+
+        <section id="faq-section" class="container mx-auto mb-40 ">
+            <h1 class="text-[2rem] text-center my-5 font-bold"><span class="text-[#00BCFF]">Frequently</span> Asked
+                Questions</h1>
+
+            <h1><span></span> </h1>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">What is the difference between var, let, and const?</div>
+                <div class="collapse-content text-sm">var is a Function-scoped, can be redeclared and updated, hoisted
+                    but not
+                    block-scoped.
+                    let: Block-scoped, cannot be redeclared but can be updated.
+                    const: Block-scoped, cannot be redeclared or updated.</div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">What is the difference between map(), forEach(), and filter()?
+                </div>
+                <div class="collapse-content text-sm">
+                    map(): Returns a new array with modified elements.
+                    forEach(): Iterates over elements but does not return a new array.
+                    filter(): Returns a new array with elements that match a condition.
+                </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">What are arrow functions, and how are they different from
+                    regular functions?</div>
+                <div class="collapse-content text-sm">
+                    Arrow functions are concise function expressions using =>.
+                    They do not have their own this, arguments, or super.
+                    Useful for callbacks but not suitable for methods inside objects.
+                </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How do JavaScript Promises work?</div>
+                <div class="collapse-content text-sm">
+                    Promises handle asynchronous operations.
+                    States: pending, fulfilled, or rejected.
+                    Methods: .then(), .catch(), .finally().
+                </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How do closures work in JavaScript?
+                </div>
+                <div class="collapse-content text-sm">
+                    Closures allow functions to retain access to variables from their outer scope even after the outer
+                    function has executed.
+                    Used for data encapsulation and maintaining state in JavaScript.
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="flex items-center justify-around ">
+        <div>
+            <div class="flex flex-col justify-start">
+
+                <a class="btn btn-ghost text-xl -ml-25">
+                    English
+                    <img src="./assets/logo.png" alt="english janala">
+                    জানালা
+                </a>
+                <p class="">ইংলিশ শিখুন সহজে</p>
+                <p>Providing ED-Tech Applications since 2025</p>
+            </div>
+        </div>
+        <div>
+            <p>Follow us</p>
+            <div class="flex  gap-3">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- <script src="scripts/login.js"></script> -->
+    <script src="scripts/scroll.js"></script>
+    <script src="scripts/fetchAllBtns.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
